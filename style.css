@@ -1,0 +1,292 @@
+/* إعادة تعيين بسيطة لضمان التوافقية */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Cairo', sans-serif; /* استخدام الخط العربي */
+    background-color: #f4f7fa; /* خلفية رمادية فاتحة جداً */
+    color: #333;
+    direction: rtl; /* دعم اللغة العربية */
+    text-align: right;
+    padding-top: 80px; /* مسافة للنافبار الثابت */
+}
+
+/* ------------------- شريط التنقل (Navbar) ------------------- */
+.navbar {
+    position: fixed; /* تثبيت الشريط في الأعلى */
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* ظل خفيف */
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: #007bff; /* لون العلامة التجارية */
+}
+
+.nav-links a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #007bff;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+}
+
+.search-input {
+    padding: 8px 15px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    margin-left: 10px;
+    width: 250px;
+}
+
+/* ------------------- الأزرار العامة ------------------- */
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: white;
+}
+
+.btn-upload {
+    background-color: #6c757d;
+    color: white;
+}
+
+.btn-download {
+    background-color: #e6f0ff;
+    color: #007bff;
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.btn-primary:hover, .btn-upload:hover {
+    opacity: 0.9;
+}
+
+/* ------------------- قسم البطل (Hero) ------------------- */
+.hero-section {
+    background-color: #e9f5ff; /* خلفية فاتحة زرقاء */
+    padding: 80px 50px;
+    margin: 20px 50px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+/* ------------------- قسم التطبيقات الشائعة ------------------- */
+.apps-section {
+    padding: 40px 50px;
+}
+
+.section-title {
+    font-size: 28px;
+    margin-bottom: 30px;
+    border-bottom: 3px solid #007bff;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.apps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* تصميم شبكي متجاوب */
+    gap: 25px;
+}
+
+.app-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* ظل أنيق */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s;
+}
+
+.app-card:hover {
+    transform: translateY(-5px); /* تأثير عند التمرير */
+}
+
+.app-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.app-card h3 {
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.app-card p {
+    color: #777;
+    margin-bottom: 20px;
+    font-size: 14px;
+    flex-grow: 1; /* لجعل البطاقات متساوية في الارتفاع */
+}
+
+/* ------------------- تذييل الصفحة (Footer) ------------------- */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #343a40;
+    color: #f4f7fa;
+    margin-top: 40px;
+}
+/* ==========================================================
+   الاستجابة والتجاوبية (Responsive Design)
+   ========================================================== */
+
+/* ------------------- 💻 للأجهزة اللوحية (Tablets) وما دون (عرض أقصى 1024 بكسل) ------------------- */
+@media (max-width: 1024px) {
+    /* تصغير الحجم الهامش والحشو العام */
+    body {
+        padding-top: 70px; /* تقليل مسافة أعلى الجسم */
+    }
+    
+    .navbar {
+        padding: 10px 30px;
+    }
+
+    .hero-section {
+        margin: 15px 30px;
+        padding: 60px 30px;
+    }
+
+    .hero-content h1 {
+        font-size: 38px;
+    }
+
+    /* تغيير عرض شبكة التطبيقات ليكون أكثر كثافة */
+    .apps-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
+
+/* ------------------- 📱 للهواتف الذكية (Smartphones) (عرض أقصى 768 بكسل) ------------------- */
+@media (max-width: 768px) {
+    
+    /* 1. النافبار (جعل العناصر تتكدس رأسياً أو تختفي) */
+    .navbar {
+        flex-direction: column; /* تكديس العناصر في الشريط العلوي */
+        align-items: flex-start;
+        padding: 15px 20px;
+        position: relative; /* إزالة التثبيت المؤقت لتسهيل التفاعل */
+        height: auto;
+    }
+
+    .nav-links, .nav-actions {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+    }
+    
+    .nav-links a {
+        margin: 5px 0;
+        text-align: right;
+        padding: 5px 0;
+        border-bottom: 1px solid #eee;
+    }
+    
+    .search-input {
+        width: 100%;
+        margin: 10px 0;
+    }
+    
+    .btn-upload {
+        width: 100%;
+        margin-top: 5px;
+    }
+
+    /* إزالة مسافة أعلى الجسم لأن النافبار لم يعد مثبتاً */
+    body {
+        padding-top: 0; 
+    }
+    
+    /* 2. قسم البطل (Hero Section) */
+    .hero-section {
+        margin: 20px;
+        padding: 40px 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 30px;
+    }
+    
+    .hero-content p {
+        font-size: 16px;
+    }
+
+    /* 3. شبكة التطبيقات (Apps Grid) */
+    .apps-section {
+        padding: 20px;
+    }
+
+    /* بطاقة واحدة لكل صف على شاشات الهاتف */
+    .apps-grid {
+        grid-template-columns: 1fr; 
+    }
+}
+/* تصميم جديد لرابط التنزيل لجعله يبدو كالزر */
+.btn-download-link {
+    background-color: #e6f0ff;
+    color: #007bff;
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600; /* لجعل النص سميكاً مثل الزر */
+    text-decoration: none; /* لإزالة الخط تحت الرابط */
+    display: inline-block; /* ليتصرف كزر وليس كخط نصي */
+    transition: background-color 0.3s;
+}
+
+.btn-download-link:hover {
+    background-color: #d1e2ff; /* لون أغمق عند التمرير */
+}
+
+/* قم بحذف أو تعديل الكود القديم للزر إذا أردت: */
+/* .btn-download {
+    ...
+} */
