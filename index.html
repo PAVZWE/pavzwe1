@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -103,6 +102,7 @@
     
     <span id="likeCount" class="like-count">0</span> إعجاب
 </div>
+
 <h2>💬 التعليقات</h2>
 
     <div class="comment-form-container">
@@ -120,3 +120,30 @@
     <div id="commentsContainer">
         <h3>لا توجد تعليقات بعد.</h3>
     </div>
+<?php
+/backend/add_comment.php
+header('Content-Type: application/json');
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+
+<script src="firebase-config.js"></script> 
+
+<script src="app.js"></script> 
+</body>
+</html>
+<div id="post_123" class="post-item">
+    <img src="your-media.jpg" alt="المحتوى" style="width: 100%;">
+    
+    <p>الإعجابات: <span id="likes-count-123">0</span></p>
+    <button onclick="addLike('post_123')">أعجبني 👍</button>
+    
+    <hr>
+    
+    <h2>أضف تعليقك:</h2>
+    <input type="text" id="comment-input-123" placeholder="اكتب تعليقك هنا">
+    <button onclick="submitComment('post_123')">نشر التعليق</button>
+    
+    <h2>التعليقات:</h2>
+    <div id="comments-area-123">
+    </div>
+</div>
