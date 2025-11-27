@@ -1,3 +1,17 @@
+/* تعريف حركة الثلج (من أعلى الشاشة إلى الأسفل) */
+@keyframes snowfall {
+    0% {
+        transform: translateY(-10vh); /* تبدأ من أعلى الشاشة قليلاً */
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.8; /* تظهر بوضوح بعد قليل */
+    }
+    100% {
+        transform: translateY(100vh); /* تنزل إلى أسفل الشاشة */
+        opacity: 0;
+    }
+}
 /* إعادة تعيين بسيطة لضمان التوافقية */
 * {
     box-sizing: border-box;
@@ -290,3 +304,16 @@ footer {
 /* .btn-download {
     ...
 } */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+}
+
+/* نجعل الصورة والفيديو يأخذان عرضاً أقصى جيداً */
+.site-image, .site-video {
+    max-width: 100%; /* لا يتجاوز عرض الشاشة */
+    height: auto;   /* يحافظ على الأبعاد الأصلية */
+    border: 1px solid #ccc;
+    margin-top: 20px;
+}

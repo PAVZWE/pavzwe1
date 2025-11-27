@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -68,3 +69,54 @@
 </html>
 <script src="security.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="security.js"></script> <script src="snow.js"></script>    </body>
+</html>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>موقعي التفاعلي</title>
+    <link rel="stylesheet" href="css/style.css"> 
+</head>
+<body>
+
+    <h1>محتوى الموقع</h1>
+
+    <img src="media/photo1.jpg" alt="صورة توضيحية للمحتوى" class="site-image">
+
+    <hr>
+    
+    <video width="640" height="360" controls class="site-video">
+        <source src="media/video_intro.mp4" type="video/mp4">
+        متصفحك لا يدعم عرض الفيديو.
+    </video>
+    
+    <script src="js/script.js"></script>
+
+</body>
+</html>
+<div class="interaction-area">
+    <input type="hidden" id="video_id" value="123">
+    
+    <button id="likeButton" class="like-btn">❤️ أعجبني</button>
+    
+    <span id="likeCount" class="like-count">0</span> إعجاب
+</div>
+<h2>💬 التعليقات</h2>
+
+    <div class="comment-form-container">
+        <form id="commentForm">
+            <input type="text" id="commenterName" placeholder="اسمك المستعار (مطلوب)" required maxlength="50">
+            <br><br>
+            <textarea id="commentText" placeholder="اكتب تعليقك هنا..." required rows="4"></textarea>
+            <br>
+            <input type="hidden" name="video_id" value="123"> 
+            
+            <button type="submit" class="submit-btn">إرسال التعليق</button>
+        </form>
+    </div>
+
+    <div id="commentsContainer">
+        <h3>لا توجد تعليقات بعد.</h3>
+    </div>
